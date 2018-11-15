@@ -16,3 +16,9 @@ someinternalhost_IP = 10.132.0.3
 
 testapp_IP = 35.203.53.138
 testapp_port = 9292 
+
+# Доп задание
+# Пример добалвение startup скрипта при создании инстанса
+#  gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family=ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=f1-micro --tags puma-server --restart-on-failure --metadata-from-file startup-script=startup_script.sh
+# Пример создания правила через gcloud
+#  gcloud compute firewall-rules create puma-server-rules --allow=TCP:9292 --target-tags=puma-server
