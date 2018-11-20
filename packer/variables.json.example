@@ -1,0 +1,7 @@
+{
+    "variables":{
+        "project_id": "my project name",
+        "source_image_family": "ubuntu-base",
+        "machine_type": "f1-micro"
+    }
+}
