@@ -2,7 +2,7 @@
     "variables":
         {
             "project_id": null,
-            "source_image_family": "",
+            "source_image_family": null,
             "machine_type": ""
         },
     "builders": [
