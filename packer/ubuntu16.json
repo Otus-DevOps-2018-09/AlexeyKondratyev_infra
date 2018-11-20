@@ -1,4 +1,10 @@
 {
+    "variables":
+        {
+            "project_id": null,
+            "source_image_family": "",
+            "machine_type": ""
+        },
     "builders": [
         {
             "type": "googlecompute",
