@@ -9,7 +9,7 @@ variable region {
 
 variable public_key_path {
   description = "Path to the public key used for ssh access"
-  default = "~/.ssh/appuser.pub"
+  default     = "~/.ssh/appuser.pub"
 }
 
 variable disk_image {

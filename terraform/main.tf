@@ -3,15 +3,17 @@ provider "google" {
   project = "${var.project}"
   region  = "${var.region}"
 }
+
 resource "google_compute_project_metadata_item" "default" {
-    key ="ssh-key"
-    value="appuser:${file(var.public_key_path)}appuser2:${file(var.public_key_path)}"
+  key   = "ssh-key"
+  value = "appuser:${file(var.public_key_path)}appuser2:${file(var.public_key_path)}"
 }
+
 resource "google_compute_instance" "app" {
   name         = "${format("reddit-app%02d", count.index+1)}"
   machine_type = "g1-small"
   zone         = "${var.zone}"
-  count = 2
+  count        = 2
 
   boot_disk {
     initialize_params {
