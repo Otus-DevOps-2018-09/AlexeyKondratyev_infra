@@ -5,7 +5,7 @@ provider "google" {
 }
 resource "google_compute_project_metadata_item" "default" {
     key ="ssh-key"
-    value="appuser1:${file(var.public_key_path)}appuser2:${file(var.public_key_path)}"
+    value="appuser:${file(var.public_key_path)}appuser2:${file(var.public_key_path)}"
 }
 resource "google_compute_instance" "app" {
   name         = "${format("reddit-app%02d", count.index+1)}"
