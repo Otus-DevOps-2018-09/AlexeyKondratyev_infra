@@ -9,5 +9,5 @@ module "storage-bucket" {
  name = ["storage-bucket-test-kond1", "storage-bucket-test-kond2"]
 }
 output storage-bucket_url {
- value = "${module.storage-bucket.url}
+ value = "${module.storage-bucket.url}"
 }
