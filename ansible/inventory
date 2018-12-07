@@ -1,2 +1,2 @@
 appserver ansible_host=35.241.165.19 ansible_user=appuser ansible_private_key_file=~/.ssh/appuser
-dberver ansible_host=35.205.32.159 ansible_user=appuser ansible_private_key_file=~/.ssh/appuser
+dbserver ansible_host=35.205.32.159 ansible_user=appuser ansible_private_key_file=~/.ssh/appuser
