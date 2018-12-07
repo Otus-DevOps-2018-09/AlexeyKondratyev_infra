@@ -18,36 +18,15 @@ resource "google_compute_instance" "db" {
   metadata {
     ssh-keys = "appuser:${file(var.public_key_path)}"
   }
-
-  # connection {
-  #   type        = "ssh"
-  #   user        = "appuser"
-  #   agent       = false
-  #   private_key = "${file(var.private_key_path)}"
-  # }
-  # provisioner "file" {
-  #   source      = "files/puma.service"
-  #   destination = "/tmp/puma.service"
-  # }
-  # provisioner "remote-exec" {
-  #   script = "files/deploy.sh"
-  # }
 }
-
 resource "google_compute_firewall" "firwall_mongo" {
   name    = "allow-mongo-default"
   network = "default"
-
   allow {
     protocol = "tcp"
     ports    = ["27017"]
   }
-
   source_tags = ["reddit-app"]
   target_tags = ["reddit-db"]
 }
-
-# resource "google_compute_address" "app_ip" {
-#   name = "reddit-app-ip"  
-# }
 

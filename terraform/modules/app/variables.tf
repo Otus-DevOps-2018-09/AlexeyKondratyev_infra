@@ -10,3 +10,7 @@ variable app_disk_image {
   description = "Disk image for reddit app"
   default     = "reddit-base"
 }
+variable tags {
+  type    = "list"
+  default = ["reddit-app"]
+}
