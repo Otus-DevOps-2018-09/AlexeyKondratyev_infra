@@ -14,7 +14,7 @@ for instance in instances:
     for tag in tags:
         if tag != host_name:
             if tag not in inventory['all']['children']:
-                invenotory['all']['children'][tag] = {'hosts':{}}
+                inventory['all']['children'][tag] = {'hosts':{}}
             inventory['all']['children'][tag] = {'hosts':{}}
 
 print json.dumps(inventory)
