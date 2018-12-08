@@ -6,7 +6,7 @@ inventory = {'all':{'host':{}, 'children':{}}}
 instances=json.load(sys.stdin)
 for instance in instances:
     host_name = instance['name']
-    host_ip = instance['networkInterfaces'][0]['accessConfig'][0]['natIP']
+    host_ip = instance['networkInterfaces'][0]['accessConfigs'][0]['natIP']
     tags = instance['tags']['items']
 
     host = {'ansible_host':host_ip}
