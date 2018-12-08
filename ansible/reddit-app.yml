@@ -42,7 +42,7 @@
       notify: reload puma
 
     - name: Bundle install
-      bundle:
+      bundler:
         state: present
         chdir: /home/appuser/reddit
       tags: deploy-tag
