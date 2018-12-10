@@ -19,7 +19,7 @@
       become: true
       service: name=mongod state=restarted
 
-- name: Configure app  & deploy application
+- name: Configure App
   hosts: app
   tags: app-tag
   become: true
@@ -36,6 +36,8 @@
       template:
         src: templates/db_config.j2
         dest: /home/appuser/db_config
+        owner: appuser
+        group: appuser
 
     - name: enable pumax
       systemd: name=puma enabled=yes
