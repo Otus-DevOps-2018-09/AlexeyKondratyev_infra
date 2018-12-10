@@ -1,1 +1,12 @@
-
+---
+- name: puma installed
+  hosts: all
+  become: true
+  task:
+  - name: Install ruby and other
+    apt: "name={{ item }} state=present"
+    with_items: 
+      - ruby-full
+      - ruby-bundler
+      - build-essential
+      
