@@ -63,7 +63,7 @@
         chdir: /home/appuser/reddit
 
   handlers:
-    - name: restart mongod
+    - name: restart puma
       become: true
-      service: name=mongod state=restarted
+      service: name=puma state=restarted
 
