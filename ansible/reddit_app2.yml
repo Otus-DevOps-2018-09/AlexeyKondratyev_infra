@@ -43,8 +43,6 @@
       systemd: name=puma enabled=yes
 
   handlers:
-    - name: restart mongod
-      service: name=mongod state=restarted
     - name: reload puma
       systemd: name=puma state=restarted
 
