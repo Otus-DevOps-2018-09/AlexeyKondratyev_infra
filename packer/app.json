@@ -10,7 +10,7 @@
             "type": "googlecompute",
             "image_name": "reddit-app-{{timestamp}}",
             "project_id": "infra-221407",
-            "image_family": "reddit-app",
+            "image_family": "reddit-app-base",
             "source_image_family": "ubuntu-1604-lts",
             "zone": "europe-west1-b",
             "ssh_username": "appuser",
@@ -22,9 +22,8 @@
     ],
     "provisioners": [
         {
-            "type": "shell",
-            "script": "scripts/install_ruby.sh",
-            "execute_command": "sudo {{.Path}}"
-        }
+        "type": "ansible",
+        "playbook_file": "ansible/packer_app.yml"
+        }        
     ]
 }
