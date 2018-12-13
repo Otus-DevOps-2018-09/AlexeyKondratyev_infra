@@ -1,5 +1,8 @@
 ---
 # tasks file for db
+- name: Show info about the env thsis host belongs to
+  debug:
+    msg: "This host is in {{ env }} environment!!!"
 - name: Change mongo config file
   become: true
   template:
