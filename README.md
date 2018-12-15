@@ -25,7 +25,6 @@ testapp_port = 9292
 -  gcloud compute firewall-rules create puma-server-rules --allow=TCP:9292 --target-tags=puma-server
 
 # Домашняя работ №5
-
 - Установил packer версии 1.3.2 на локальную систему
 - Разрешил пакеру управление GCP ресурсами чрез ADC с помощью команды  gcloud auth application-default login
 - Создал папку packer и шаблон packer под свой проект - packer/ubuntu16.json
