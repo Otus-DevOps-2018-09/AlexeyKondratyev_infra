@@ -23,7 +23,7 @@
     "provisioners": [
         {
             "type": "ansible",
-            "script": "../ansible/packer_db.yml"
+            "script": "ansible/playbooks/packer_db.yml"
         }
     ]
 }
