@@ -13,16 +13,20 @@ someinternalhost_IP = 10.132.0.3
 
 ## Данные для подключения к приложению puma по домашнему заданию №4
 
+- Данные для подключения к приложению puma
+
 testapp_IP = 35.240.97.62
 testapp_port = 9292 
 
 ## Доп задание к ДЗ №4
+
 - Пример добалвение startup скрипта при создании инстанса
 -  gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family=ubuntu-1604-lts --image-project=ubuntu-os-cloud --machine-type=f1-micro --tags puma-server --restart-on-failure --metadata-from-file startup-script=startup_script.sh
 - Пример создания правила через gcloud
 -  gcloud compute firewall-rules create puma-server-rules --allow=TCP:9292 --target-tags=puma-server
 
-#№ Домашняя работ №5
+## Домашняя работ №5
+
 - Установил packer версии 1.3.2 на локальную систему
 - Разрешил пакеру управление GCP ресурсами чрез ADC с помощью команды  gcloud auth application-default login
 - Создал папку packer и шаблон packer под свой проект - packer/ubuntu16.json
@@ -41,16 +45,18 @@ testapp_port = 9292
 - Баш скрипт установки ruby scripts/install_ruby.sh
 - Файл исключений .gitignore
 - Описание проекта README.md
-- Описание PR PULL_REQUEST_TEMPLATE.md
 
 ## Домашняя работа №6
+
 - Создан файл main.tf под инициализацию ресурсов в модуле GCP
 - Создан файл выходных переменных outputs.tf для вывода необходиммых данных (внешний ip)
 - В файл main.tf добавленные провижинеры для установки приложения puma
 - Добавлен файл variables.tf для параметризации конфигурационных файлов 
 - Добавлен файл terraform.tfvars для определения переменных, данные о которых не нужно загружать в СКВ
 - Добавлен файл terraform.tfvars.example где есть образец использования файла переменных
+
 ## Задачи с *
+
 - Создан файл lb.tf для реализации системы балансировки на ВМ и балансера в GCP
 
 ## Домашния работа №7
@@ -66,7 +72,7 @@ testapp_port = 9292
  - Конфигурация инфраструктуры  разбита на prod и stage окружения
  - Создан модуль storage-bucket для создания бакета в сервисе Storage
 
-# Домашняя работа №8 (ansible-1)
+## Домашняя работа №8 (ansible-1)
 
 - Подготовил локальное окружение для работы с anisble (Windows10+vagrant+vm-ubuntu)
 - Попробовал работать с anisble через Win10+WSL(не работает)
@@ -87,7 +93,7 @@ appserver : ok=2 changed=1
 - Для выполнения задачи со звездочкой была попытка самостоятоельно написать скрипт которая закончилась неудачно, в итоге подсмотрел как сделаго у as-anatoliy-u
 - Сделал два скрипта по аналогии dynamic-inventory.sh* и gce-list-parser.py*
 
-# Домашняя работы №9
+# Домашняя работы №9 (ansible-2)
 
 - Создан playbook `ansible/reddit_app.yml` (позже переименована в `reddit_app_one_play.yml`)
 - Добавлен в `.gitignore` `*.retry`
