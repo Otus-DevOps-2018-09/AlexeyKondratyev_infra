@@ -1,31 +1,29 @@
 {
     "variables":
         {
-            "project_id": null,
-            "source_image_family": null,
+            "project_id": "infra-221407",
+            "source_image_family": "ubuntu-1604-lts",
             "machine_type": ""
         },
     "builders": [
         {
             "type": "googlecompute",
-            "image_name": "reddit-base-{{timestamp}}",
-            "project_id": "{{.Vars}}",
+            "image_name": "reddit-app-{{timestamp}}",
+            "project_id": "infra-221407",
             "image_family": "reddit-app-base",
-            "source_image_family": "{{.Vars}}",
+            "source_image_family": "ubuntu-1604-lts",
             "zone": "europe-west1-b",
             "ssh_username": "appuser",
             "disk_size":10,
-            "disk_type":"pd_standart",
-            "labels":{"homework no":5},
+            "disk_type":"pd-standard",
             "image_description": "image for reddit app",
-            "machine_type": "{{.Vars}}"
+            "machine_type": "f1-micro"
         }
     ],
     "provisioners": [
         {
-            "type": "shell",
-            "script": "scripts/install_ruby.sh",
-            "execute_command": "sudo {{.Path}}"
-        }
+        "type": "ansible",
+        "playbook_file": "ansible/packer_app.yml"
+        }        
     ]
 }

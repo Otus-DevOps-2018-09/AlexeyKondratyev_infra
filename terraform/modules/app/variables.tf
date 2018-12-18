@@ -8,7 +8,7 @@ variable zone {
 
 variable app_disk_image {
   description = "Disk image for reddit app"
-  default     = "reddit-base"
+  default     = "reddit-app"
 }
 variable tags {
   type    = "list"

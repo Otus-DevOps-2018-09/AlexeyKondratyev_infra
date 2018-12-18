@@ -1,31 +1,29 @@
 {
     "variables":
         {
-            "project_id": null,
-            "source_image_family": null,
-            "machine_type": ""
+            "project_id": "infra-221407",
+            "source_image_family": "ubuntu-1604-lts",
+            "machine_type": "f1-micro"
         },
     "builders": [
         {
             "type": "googlecompute",
-            "image_name": "reddit-base-{{timestamp}}",
-            "project_id": "{{.Vars}}",
-            "image_family": "reddit-base",
-            "source_image_family": "{{.Vars}}",
+            "image_name": "reddit-db-{{timestamp}}",
+            "project_id": "infra-221407",
+            "image_family": "reddit-db",
+            "source_image_family": "ubuntu-1604-lts",
             "zone": "europe-west1-b",
             "ssh_username": "appuser",
             "disk_size":10,
-            "disk_type":"pd_standart",
-            "labels":{"homework no":5},
-            "image_description": "image for packer tests",
-            "machine_type": "{{.Vars}}"
+            "disk_type":"pd-standard",
+            "image_description": "reddit db base from packer",
+            "machine_type": "f1-micro"
         }
     ],
     "provisioners": [
         {
-            "type": "shell",
-            "script": "scripts/install_mongodb.sh",
-            "execute_command": "sudo {{.Path}}"
+            "type": "ansible",
+            "script": "ansible/packer_db.yml"
         }
     ]
 }
