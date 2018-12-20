@@ -1,1 +1,3 @@
 ansible>=2.4
+testinfra>=1.10
+python-vagrant>=0.5.15
