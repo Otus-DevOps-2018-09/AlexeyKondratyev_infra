@@ -1,22 +1,14 @@
-- name: Deploy App
-  hosts: app
-  vars:
-    deploy_user: appuser
+import os
 
-  tasks:
-    - name: Fetch the latest version of application code
-      git:
-        repo: 'https://github.com/express42/reddit.git'
-        dest: "/home/{{ deploy_user }}/reddit"
-        version: monolith
-      notify: restart puma
+import testinfra.utils.ansible_runner
 
-    - name: bundle install
-      bundler:
-        state: present
-        chdir: "/home/{{ deploy_user }}/reddit"
+testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
+    os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
-  handlers:
-  - name: restart puma
-    become: true
-    systemd: name=puma state=restarted
+
+def test_hosts_file(host):
+    f = host.file('/etc/hosts')
+
+    assert f.exists
+    assert f.user == 'root'
+    assert f.group == 'root'
