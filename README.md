@@ -106,3 +106,15 @@ appserver : ok=2 changed=1
 - Переделана конфигурация на мультисценарную в одном плейбуке `reddit_app2.yml` (позже переименована в `reddit_app_multiple_play.yml`)
 - Переделана конфигурация на мультиплейбучную (`app.yml` ,`db.yml` , `deploy.yml`, `site.yml`)
 - Изменены провижинонеры в packer, вместо скриптов прописаны плейбууки
+
+# Домашния работа №10
+
+- Использовал `ansible-galaxy init` для формирования структуры ролей app db
+- Перенес секции `tasks` в файлы `roles/../tasks/main.yml`
+- Тоже самое сделал с шаблонами и файлами
+- Отметил для себя что необязательно указывать `templates` и `files` в пути
+- Отдельно вынес хэндлеры в `roles/../handlers/main.yml`
+- Сделал папки для окружений с отдельными инвентори `enviroments/../inventory`
+- Попробовал задеплоить приложение с определенным окружением `ansible-playbook -i environments/prod/inventory deploy.yml`
+- Добавил Community-роль `jdauphant.nginx`
+- Добавил ноый Playbook и зашифровал данные с помощью `ansible vault`
