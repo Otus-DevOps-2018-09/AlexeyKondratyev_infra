@@ -66,7 +66,7 @@ testapp_port = 9292
  - Конфигурация инфраструктуры  разбита на prod и stage окружения
  - Создан модуль storage-bucket для создания бакета в сервисе Storage
 
-# Домашняя работа №8 (ansible-1)
+## Домашняя работа №8 (ansible-1)
 
 - Подготовил локальное окружение для работы с anisble (Windows10+vagrant+vm-ubuntu)
 - Попробовал работать с anisble через Win10+WSL(не работает)
@@ -87,7 +87,7 @@ appserver : ok=2 changed=1
 - Для выполнения задачи со звездочкой была попытка самостоятоельно написать скрипт которая закончилась неудачно, в итоге подсмотрел как сделаго у as-anatoliy-u
 - Сделал два скрипта по аналогии dynamic-inventory.sh* и gce-list-parser.py*
 
-# Домашняя работы №9
+## Домашняя работы №9 (ansible-2)
 
 - Создан playbook `ansible/reddit_app.yml` (позже переименована в `reddit_app_one_play.yml`)
 - Добавлен в `.gitignore` `*.retry`
@@ -101,7 +101,7 @@ appserver : ok=2 changed=1
 - Переделана конфигурация на мультиплейбучную (`app.yml` ,`db.yml` , `deploy.yml`, `site.yml`)
 - Изменены провижинонеры в packer, вместо скриптов прописаны плейбууки
 
-# Домашния работа №10
+## Домашняя работа №10 (ansible-3)
 
 - Использовал `ansible-galaxy init` для формирования структуры ролей app db
 - Перенес секции `tasks` в файлы `roles/../tasks/main.yml`
@@ -112,3 +112,17 @@ appserver : ok=2 changed=1
 - Попробовал задеплоить приложение с определенным окружением `ansible-playbook -i environments/prod/inventory deploy.yml`
 - Добавил Community-роль `jdauphant.nginx`
 - Добавил ноый Playbook и зашифровал данные с помощью `ansible vault`
+
+## Домашняя работа №11 (ansible-4)
+
+- Установлен Vagrant  на локальную машину
+- Проверена установка `vagrant -v`
+- В файл `.gitignore` добавлены исключения для молекулы, вагранта
+- Создан `Vagrantfile` для двух ВМ, приложения и БД
+- Проверено что бокс скачался `vagrant box list`
+- Проверен статус ВМ `vagrant status`
+- Добавлен провижин для ansible
+- Добавлен playbook `base.yml` для предварительной установки python
+- Доработка ролей app и db, плейбуки разделены на установку приложения и настройку приложения
+- Переопределены переменные через extra_vars в Vagrantfile
+- Установлены molecule, testinfra, python-vagrant
