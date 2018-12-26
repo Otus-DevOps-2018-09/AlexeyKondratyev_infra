@@ -126,3 +126,4 @@ appserver : ok=2 changed=1
 - Доработка ролей app и db, плейбуки разделены на установку приложения и настройку приложения
 - Переопределены переменные через extra_vars в Vagrantfile
 - Установлены molecule, testinfra, python-vagrant
+- Созданые файлы молекулы
